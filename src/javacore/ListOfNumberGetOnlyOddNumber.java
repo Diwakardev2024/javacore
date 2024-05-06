@@ -19,6 +19,11 @@ public class ListOfNumberGetOnlyOddNumber {
 			}
 		}
 	}
+	public static boolean onlyOddNumbers(List<Integer> list) {
+		return list
+				.parallelStream() // parallel stream for faster processing
+				.anyMatch(x -> x % 2 != 0); // return as soon as any elements match the condition
+	}
 public static void main(String[] args) {
 	
 	List<Integer> list=Arrays.asList(1,23,5,6,40,25,23,53);
