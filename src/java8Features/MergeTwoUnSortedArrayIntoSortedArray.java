@@ -1,33 +1,20 @@
 package java8Features;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class MergeTwoUnSortedArrayIntoSortedArray {
 	
 	public static void main(String[] args) {
 		
-		List<Integer> list1=new ArrayList<>();
-		list1.add(10);
-		list1.add(5);
-		list1.add(0);
-		list1.add(-45);
-		list1.add(15);
-		list1.add(20);
-		list1.add(14);
-		
-//		int sum=list1.stream().mapToInt(i -> i).sum();
-//		System.out.println(sum);
-		
-		List<Integer> list2=new ArrayList<>();
-		list2.add(-10);
-		list2.add(-5);
-		list2.add(6);
-		list2.add(45);
-		list2.add(-15);
-		list2.add(12);
-		list2.add(19);
-		
+	
+		 int[] a = new int[] {4, 2, 7, 1};
+         
+	        int[] b = new int[] {8, 3, 9, 5};
+	         
+	        int[] c = IntStream.concat(Arrays.stream(a), Arrays.stream(b)).sorted().toArray();
+	         
+	        System.out.println(Arrays.toString(c));
 		
 	}
 
