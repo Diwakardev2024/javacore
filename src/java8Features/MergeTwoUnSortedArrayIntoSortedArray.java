@@ -16,6 +16,9 @@ public class MergeTwoUnSortedArrayIntoSortedArray {
 		list1.add(20);
 		list1.add(14);
 		
+//		int sum=list1.stream().mapToInt(i -> i).sum();
+//		System.out.println(sum);
+		
 		List<Integer> list2=new ArrayList<>();
 		list2.add(-10);
 		list2.add(-5);
