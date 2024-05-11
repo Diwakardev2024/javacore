@@ -16,8 +16,7 @@ public class SquareNumberFilterTheNumber {
 		List<Integer> list=Arrays.asList(arr);
 		
 //		list.stream().map(i->i*i).filter(j->j>100).forEach(System.out::println);
-		OptionalDouble avg = list.stream().mapToInt(n -> n * n).filter(n -> n >
-		100).average();		
+		OptionalDouble avg = list.stream().mapToInt(n -> n * n).filter(n -> n >100).average();		
 		System.out.println(avg);
 		
 		if (avg.isPresent())
