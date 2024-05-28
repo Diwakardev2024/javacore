@@ -1,7 +1,5 @@
 package javacore;
 
-import java.util.Map;
-
 // How do you create a record in Java?
 public class CreateRecord {
 
