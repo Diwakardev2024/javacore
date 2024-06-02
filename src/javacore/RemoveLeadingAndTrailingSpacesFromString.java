@@ -13,7 +13,7 @@ public class RemoveLeadingAndTrailingSpacesFromString {
 		 */
 		String s = "  abc  def\t";
 		
-		s = s.strip();
+		//s = s.strip();
 				
 		System.out.println(s);
 	}

@@ -3,6 +3,7 @@ package theoryOfJava8Features;
 public class ImplementationOfLambdaExpression {
 	
 	public static void printFormatted(String str,StringFunction format) {
+		
 		String result =format.run(str);
 		
 		System.out.println(result);
