@@ -39,6 +39,11 @@ public class Employee implements Comparable<Employee>{
 	        this.age = age;
 	        this.salary = salary;
 	    }
+	 
+	 public Employee(String name, int salary) {
+	        this.name = name;
+	        this.salary = salary;
+	    }
 	@Override
 	 //this is overridden to print the user-friendly information about the Employee
 	public String toString() {

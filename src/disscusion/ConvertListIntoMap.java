@@ -2,6 +2,7 @@ package disscusion;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -141,5 +142,34 @@ public class ConvertListIntoMap {
 		default:
 			return Optional.empty();
 		}
+		
+		
+		// Comparator
+//		 Map<String, Integer> map1 = new HashMap<>();
+//	        map1.put("apple", 3);
+//	        map1.put("banana", 2);
+//	        map1.put("cherry", 1);
+	        
+//	        Comparator<Integer> sp=new Comparator<Integer>() {
+//				
+//				@Override
+//				public int compare(Integer o1, Integer o2) {
+//					
+//					return o1 - o2;
+//				}
+//			};
+//			
+//			Comparator<Integer> comp = (a,b) -> a -b;
+					
+					
+	        // Step 2: Sort the entries by value using the comparator
+//	        List<Entry<String, Integer>> sortedEntries = map1.entrySet().stream()
+//	        		.sorted(Compar)
+//	        				.collect(Collectors.toList());
+	            
+	        // Print the sorted entries
+//	        sortedEntries.forEach(entry -> 
+//	            System.out.println(entry.getKey() + ": " + entry.getValue())
+		
 	}
 }
