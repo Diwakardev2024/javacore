@@ -21,12 +21,12 @@ public class ArraySublist {
 	            System.out.println("Original arrlist: " + arrlist); 
 	  	           
 	            List<String> arrlist2 = arrlist.subList(2, 4); 
-	            List<String> arrlist3 = arrlist.reversed();
+	          //  List<String> arrlist3 = arrlist.reversed();
 //	            List<String> arrlist2 = arrlist.subList(7, 2); 
 	  
 	         
 	            System.out.println("Sublist of arrlist: " + arrlist2); 
-	            System.out.println("Sublist of arrlist: " + arrlist3); 
+	            //System.out.println("Sublist of arrlist: " + arrlist3); 
 	        } 
 	  
 	        catch (IndexOutOfBoundsException e) { 

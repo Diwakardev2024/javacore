@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.function.Consumer;
+import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.LinkedHashMap;
 
 public class ConvertListIntoMap {
@@ -86,7 +88,7 @@ public class ConvertListIntoMap {
 			// sms
 			// database
 		};
-//		map.keySet().stream().forEach(encConsumer); // Stream of keys
+		map.keySet().stream().forEach(encConsumer.andThen(printConsumer)); // Stream of keys
 //		map.values().stream().forEach(printConsumer); // Stream of values
 //		map.entrySet().stream().forEach(entryConsumer); // Stream of entry - key & value together
 
@@ -99,31 +101,43 @@ public class ConvertListIntoMap {
 //		if(data != null) {
 //			data.floatValue();
 //		}
-		
+
 		String output = getProcessedData(1);
-		if(output != null)
+		if (output != null)
 			System.out.println(output.toUpperCase());
-		
-		
+
 		Optional<String> outputOpt = getProcessedData1(1);
 		outputOpt.ifPresent(d -> d.toUpperCase());
 
 		Optional<Integer> optionalNumber = Optional.of(10);
 
-        Optional<Integer> filteredNumber = optionalNumber.filter(num -> num > 5);
-        System.out.println(filteredNumber);
-        
-        Optional<String> optionalValue = Optional.of("Hello");
+		Optional<Integer> filteredNumber = optionalNumber.filter(num -> num > 5);
+		System.out.println(filteredNumber);
 
-        Optional<String> result = optionalValue.flatMap(value ->   Optional.of(" World"));
-        System.out.println(result);
-        
-        Optional<String> firstName = Optional.of("John");
-        Optional<String> lastName = Optional.of("Doe");
+		Optional<String> optionalValue = Optional.of("Hello");
 
-        Optional<String> fullName = firstName.flatMap(fName ->  lastName.map(x -> "Hello" + fName + x.toUpperCase()));
-        
-        optionalValue.flatMap(str -> Optional.of(str.length()) ).flatMap(length ->   Optional.of(length * 2));
+		Optional<String> result = optionalValue.flatMap(value -> Optional.of(" World"));
+		System.out.println(result);
+
+		Optional<String> firstName = Optional.of("John");
+		Optional<String> lastName = Optional.of("Doe");
+
+		Optional<String> fullName = firstName.flatMap(fName -> lastName.map(x -> "Hello" + fName + x.toUpperCase()));
+
+		optionalValue.flatMap(str -> Optional.of(str.length())).flatMap(length -> Optional.of(length * 2));
+		
+		IntPredicate greaterThan10= value -> value>10;
+		IntPredicate divisibleBy2= value -> value % 2 ==0;
+		IntPredicate divisibleBy5= value -> value % 5 ==0;
+
+//		IntStream.rangeClosed(1, 20).filter(greaterThan10).filter(divisibleBy2).filter(divisibleBy5).forEach((num)->System.out.println(num));
+		
+		IntStream.rangeClosed(1, 20).filter(greaterThan10.and(divisibleBy2).and(divisibleBy5)).forEach((num)->System.out.println(num));
+		
+		
+		if(!fullName.isEmpty() || fullName != null) {
+			
+		}
 	}
 
 	public static String getProcessedData(int choice) {
@@ -134,7 +148,7 @@ public class ConvertListIntoMap {
 			return null;
 		}
 	}
-	
+
 	public static Optional<String> getProcessedData1(int choice) {
 		switch (choice) {
 		case 0:
@@ -142,14 +156,13 @@ public class ConvertListIntoMap {
 		default:
 			return Optional.empty();
 		}
-		
-		
+
 		// Comparator
 //		 Map<String, Integer> map1 = new HashMap<>();
 //	        map1.put("apple", 3);
 //	        map1.put("banana", 2);
 //	        map1.put("cherry", 1);
-	        
+
 //	        Comparator<Integer> sp=new Comparator<Integer>() {
 //				
 //				@Override
@@ -160,16 +173,21 @@ public class ConvertListIntoMap {
 //			};
 //			
 //			Comparator<Integer> comp = (a,b) -> a -b;
-					
-					
-	        // Step 2: Sort the entries by value using the comparator
+
+		// Step 2: Sort the entries by value using the comparator
 //	        List<Entry<String, Integer>> sortedEntries = map1.entrySet().stream()
 //	        		.sorted(Compar)
 //	        				.collect(Collectors.toList());
-	            
-	        // Print the sorted entries
+
+		// Print the sorted entries
 //	        sortedEntries.forEach(entry -> 
 //	            System.out.println(entry.getKey() + ": " + entry.getValue())
-		
+
 	}
+}
+
+interface Test {
+//	Object getUser(long id);
+
+	void printUserDetails(long id);
 }
