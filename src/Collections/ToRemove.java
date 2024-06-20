@@ -59,6 +59,8 @@ public class ToRemove {
 		 }
 		return newList;
 	}
+	
+	
 
 	public static void main(String[] args) {
 		method();

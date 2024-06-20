@@ -10,7 +10,9 @@ public class FrequencyOfEachCharacterInString {
 		 
 		String s="Aswderfrddlhjaadfewrsk";
 		
-		Map<Character, Long> Map=s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+		Map<Character, Long> Map=s.chars()
+									.mapToObj(c->(char)c)
+									.collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 		
 		System.out.println(Map);
 		

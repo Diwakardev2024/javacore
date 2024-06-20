@@ -11,9 +11,14 @@ public class PrintMultiplesOf5FromTheList {
 		List<Integer> listOfInteger = Arrays.asList(4, 5, 25, 30, 60, 8, 65, 15, 64, 69);
 		System.out.println(listOfInteger);
 
-		String list = listOfInteger.stream().filter(i -> i % 5 == 0).map(String::valueOf).collect(Collectors.joining(","));
+		String list = listOfInteger.stream()
+							.filter(i -> i % 5 == 0)
+							.map(String::valueOf)
+							.collect(Collectors.joining(","));
 
-		List<Integer> integerList = Arrays.stream(list.split(",")).map(Integer::parseInt).collect(Collectors.toList());
+		List<Integer> integerList = Arrays.stream(list.split(","))
+									.map(Integer::parseInt)
+									.collect(Collectors.toList());
 
 		System.out.println(integerList);
 	}

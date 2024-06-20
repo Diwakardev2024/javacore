@@ -20,8 +20,7 @@ public class CommonElementsBEtweenTwoArrays {
         Function<Integer, Stream<Integer>> func = num-> list2.stream();
         
         List<Integer> output = Stream.of(list1,list2).flatMap(List::stream).distinct().collect(Collectors.toList());
-        System.out.println(output);
-        
+        System.out.print(output+" ");
         
 		
 	}

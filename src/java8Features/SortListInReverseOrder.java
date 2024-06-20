@@ -10,7 +10,10 @@ public class SortListInReverseOrder {
 
 		List<Integer> listOfInteger = Arrays.asList(2, 38, 4, 7, 1, 5, 6, 4, 8, 10, 11, 44, 114, 1, 1, 0, 0, 0);
 		
-		String output = listOfInteger.stream().sorted(Comparator.reverseOrder()).map(String::valueOf).collect(Collectors.joining(","));
+		String output = listOfInteger.stream()
+						.sorted(Comparator.reverseOrder())
+						.map(String::valueOf)
+						.collect(Collectors.joining(","));
 		System.out.println(output);
 	}
 

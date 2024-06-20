@@ -25,6 +25,7 @@ public class GetNextAndPreviousDate {
 		System.out.println(getNextDay(today));
 		
 		System.out.println(getNextDay(tomorrow));
+		System.out.println(tomorrow.getDayOfMonth());
 	}
 
 }

@@ -24,7 +24,6 @@ public class FirstRepeatingCharacter {
 				.filter(entry ->entry.getValue()>1)
 				.map(entry->entry.getKey())
 				.findFirst().get();
-		
 		System.out.println(firstRepeatedChar);
 		
 	}

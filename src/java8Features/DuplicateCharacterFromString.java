@@ -12,11 +12,12 @@ public class DuplicateCharacterFromString {
 	public static void main(String[] args) {
 		
 		String inputString = "Java Concept Of The Day".replaceAll("\\s+", "").toLowerCase();
+		System.out.println(inputString);
 		Set<String> uniquechars=new HashSet<>();
 		
 		Set<String> duplicateChars=Arrays.stream(inputString.split("")).filter(ch -> !uniquechars.add(ch)).collect(Collectors.toSet());
 		
 		System.out.println(duplicateChars);
 	}
-
+ 
 }

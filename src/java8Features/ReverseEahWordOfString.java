@@ -11,7 +11,9 @@ public class ReverseEahWordOfString {
 		
 		 String str = "Java Concept Of The Day";
 		 
-		 String reversedStr=Arrays.stream(str.split(" ")).map(word ->new StringBuffer(word).reverse()).collect(Collectors.joining(" "));
+		 String reversedStr=Arrays.stream(str.split(" "))
+				 .map(word ->new StringBuffer(word).reverse())
+				 .collect(Collectors.joining(" "));
 		 
 		 System.out.println(reversedStr);
 		 

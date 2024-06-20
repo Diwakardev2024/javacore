@@ -18,6 +18,7 @@ public class ContainsDuplicate {
 
 		List<Integer> list=Arrays.stream(nums).boxed()
 				.collect(Collectors.toList());
+		System.out.println(list);
 		long res = Arrays.stream(nums).boxed().collect(Collectors.counting());
 		System.out.println(res);
 		if(set.size()==list.size())
@@ -27,7 +28,7 @@ public class ContainsDuplicate {
 	
 	
 	public static void main(String[] args) {
-		int [] nums = {1,2,3,4};
+		int [] nums = {1,1,2,3,4};
 		ContainsDuplicate con=new ContainsDuplicate();
 		System.out.println(con.containsDuplicate(nums));
 		
