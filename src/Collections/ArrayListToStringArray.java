@@ -17,6 +17,7 @@ public class ArrayListToStringArray {
 		 System.out.println(Arrays.toString(answer));
 //		String[] str = new String[a1.size()];
 		String z[] = a1.toArray(new String[a1.size()]);
+		System.out.println(Arrays.toString(z));
 		
 
 		/*
